@@ -1,38 +1,146 @@
-.App {
-  text-align: center;
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+.app-bg {
+  background-image: url('./navbar-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
   min-height: 100vh;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  padding: 1rem;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1rem;
+  list-style-type: none;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+}
+
+.top-left-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  height: 50px;
+  margin-right: 1rem;
+}
+
+.company-info {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.company-name {
+  font-size: 1.25rem;
+  font-weight: bold;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.company-group {
+  font-size: 1rem;
+  color: white;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.main-content {
+    position: absolute;
+    top: 50%; /* Center vertically */
+    left: 25%; /* Center horizontally */
+    transform: translate(-50%, -50%);
+    max-width: 600px; /* Set a max-width for the content */
+    width: 100%; /* Use full width up to the max width */
+    color: white;
+    text-align: left;
+    padding-left: 0rem; /* Add padding to match the design */
+    padding-right: 10rem; /* Add padding to match the design */
   }
-  to {
-    transform: rotate(360deg);
+.title {
+  font-size: 4rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  font-size: 3rem;
+  font-weight: 300;
+  margin-bottom: 1rem;
+}
+
+.description {
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.read-more-btn {
+  background-color: yellow;
+  color: black;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.bottom-right-image {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  max-width: 600px;
+}
+
+.bottom-right-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .title {
+    font-size: 2.5rem;
+  }
+  
+  .subtitle {
+    font-size: 2rem;
+  }
+  
+  .nav-links {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .nav-links a {
+    margin-bottom: 0.5rem;
+  }
+  
+  .main-content {
+    padding: 2rem 1rem;
+  }
+  
+  .bottom-right-image {
+    position: relative;
+    max-width: 100%;
   }
 }
